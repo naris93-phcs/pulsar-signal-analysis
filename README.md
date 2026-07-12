@@ -72,7 +72,7 @@ pulsar-signal-analysis/
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/pulsar-signal-analysis.git
+git clone https://github.com/naris93-phcs/pulsar-signal-analysis.git
 ```
 
 Install the required packages
