@@ -4,7 +4,7 @@ SIMULATION_CONFIG = {
     "period": 1.0,
     "pulse_width": 0.03,
     "pulse_amplitude": 1.0,
-    "noise_level": 0.8,
+    "noise_level": 0.1
 }
 
 ANALYSIS_CONFIG = {
