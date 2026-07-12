@@ -10,7 +10,7 @@ from src.config import (SIMULATION_CONFIG,ANALYSIS_CONFIG,MONTE_CARLO_CONFIG,)
 from src.monte_carlo import run_monte_carlo
 
 # Easier dataset for development
-data = data = simulate_pulsar_signal(
+data = simulate_pulsar_signal(
     **SIMULATION_CONFIG,
 )
 
