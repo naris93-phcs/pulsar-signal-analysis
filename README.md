@@ -1,3 +1,9 @@
+![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python&logoColor=white)
+![Version](https://img.shields.io/badge/Version-v1.0-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Scientific Computing](https://img.shields.io/badge/Scientific_Computing-Python-blueviolet)
+![Status](https://img.shields.io/badge/Status-Stable-success)
+
 # Pulsar Signal Analysis
 
 Python pipeline for simulating and analyzing pulsar signals using signal processing techniques such as Fourier analysis, phase folding, pulse profile extraction, and Monte Carlo validation.
