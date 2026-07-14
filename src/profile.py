@@ -1,10 +1,8 @@
-
 import pandas as pd
 import numpy as np
 
 
 def mean_pulse_profile(folded_data, bin_width=0.02):
-
     """
     Calculate the mean folded pulse profile.
 

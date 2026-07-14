@@ -38,17 +38,12 @@ def simulate_pulsar_signal(
 
     phase = (time % period) / period
 
-    pulse = pulse_amplitude * np.exp(
-        -0.5 * ((phase - 0.5) / pulse_width) ** 2
-    )
+    pulse = pulse_amplitude * np.exp(-0.5 * ((phase - 0.5) / pulse_width) ** 2)
 
     noise = np.random.normal(0, noise_level, size=len(time))
 
     flux = pulse + noise
 
-    data = pd.DataFrame({
-        "time": time,
-        "flux": flux
-    })
+    data = pd.DataFrame({"time": time, "flux": flux})
 
     return data

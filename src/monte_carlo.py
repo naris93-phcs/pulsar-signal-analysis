@@ -68,44 +68,44 @@ def run_monte_carlo(
                 mean_profile,
                 peak,
                 pulse_width,
-                exclusion_factor=analysis_config[
-                    "snr_exclusion_factor"
-                ],
+                exclusion_factor=analysis_config["snr_exclusion_factor"],
             )
 
-            pulse_duration = (
-                pulse_width["width_phase"] * best_period
-            )
+            pulse_duration = pulse_width["width_phase"] * best_period
 
-            results.append({
-                "run": run_number,
-                "estimated_period": best_period,
-                "peak_phase": peak["phase"],
-                "peak_flux": peak["flux"],
-                "peak_prominence": peak["prominence"],
-                "pulse_width_phase": pulse_width["width_phase"],
-                "pulse_duration": pulse_duration,
-                "baseline": snr_result["baseline"],
-                "noise_std": snr_result["noise_std"],
-                "signal_amplitude": snr_result["signal_amplitude"],
-                "snr": snr_result["snr"],
-                "success": True,
-            })
+            results.append(
+                {
+                    "run": run_number,
+                    "estimated_period": best_period,
+                    "peak_phase": peak["phase"],
+                    "peak_flux": peak["flux"],
+                    "peak_prominence": peak["prominence"],
+                    "pulse_width_phase": pulse_width["width_phase"],
+                    "pulse_duration": pulse_duration,
+                    "baseline": snr_result["baseline"],
+                    "noise_std": snr_result["noise_std"],
+                    "signal_amplitude": snr_result["signal_amplitude"],
+                    "snr": snr_result["snr"],
+                    "success": True,
+                }
+            )
 
         except ValueError:
-            results.append({
-                "run": run_number,
-                "estimated_period": None,
-                "peak_phase": None,
-                "peak_flux": None,
-                "peak_prominence": None,
-                "pulse_width_phase": None,
-                "pulse_duration": None,
-                "baseline": None,
-                "noise_std": None,
-                "signal_amplitude": None,
-                "snr": None,
-                "success": False,
-            })
+            results.append(
+                {
+                    "run": run_number,
+                    "estimated_period": None,
+                    "peak_phase": None,
+                    "peak_flux": None,
+                    "peak_prominence": None,
+                    "pulse_width_phase": None,
+                    "pulse_duration": None,
+                    "baseline": None,
+                    "noise_std": None,
+                    "signal_amplitude": None,
+                    "snr": None,
+                    "success": False,
+                }
+            )
 
     return pd.DataFrame(results)

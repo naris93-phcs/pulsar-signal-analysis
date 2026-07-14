@@ -49,6 +49,7 @@ def plot_flux_histogram(data, output_path=None):
 
     plt.show()
 
+
 def plot_folded_signal(data, output_path=None):
     """
     Plot folded pulsar signal.
@@ -56,11 +57,7 @@ def plot_folded_signal(data, output_path=None):
 
     fig, ax = plt.subplots(figsize=(10, 4))
 
-    ax.scatter(
-        data["phase"],
-        data["flux"],
-        s=5
-    )
+    ax.scatter(data["phase"], data["flux"], s=5)
 
     ax.set_xlabel("Phase")
     ax.set_ylabel("Flux")
@@ -71,7 +68,8 @@ def plot_folded_signal(data, output_path=None):
     if output_path is not None:
         fig.savefig(output_path, dpi=300)
 
-    plt.show()    
+    plt.show()
+
 
 def plot_mean_pulse_profile(profile, output_path=None):
     """
@@ -107,7 +105,6 @@ def plot_mean_pulse_profile(profile, output_path=None):
     plt.show()
 
 
-    
 def plot_pulse_measurements(
     profile,
     peak,
@@ -128,9 +125,7 @@ def plot_pulse_measurements(
     left_phase = phase[0] + pulse_width["left"] * phase_step
     right_phase = phase[0] + pulse_width["right"] * phase_step
 
-    half_height = (
-        peak["flux"] + snr_result["baseline"]
-    ) / 2
+    half_height = (peak["flux"] + snr_result["baseline"]) / 2
 
     fig, ax = plt.subplots(figsize=(9, 5))
 
@@ -189,4 +184,4 @@ def plot_pulse_measurements(
     if output_path is not None:
         fig.savefig(output_path, dpi=300)
 
-    plt.show()    
+    plt.show()

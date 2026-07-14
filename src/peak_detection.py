@@ -70,10 +70,7 @@ def measure_pulse_width(profile, peak):
         rel_height=0.5,
     )
 
-    phase_step = (
-        profile["phase_center"].iloc[1]
-        - profile["phase_center"].iloc[0]
-    )
+    phase_step = profile["phase_center"].iloc[1] - profile["phase_center"].iloc[0]
 
     width_phase = widths[0] * phase_step
 
@@ -83,6 +80,7 @@ def measure_pulse_width(profile, peak):
         "left": float(left_ips[0]),
         "right": float(right_ips[0]),
     }
+
 
 def compute_snr(
     profile,
@@ -114,9 +112,7 @@ def compute_snr(
     phase = profile["phase_center"].to_numpy()
     flux = profile["mean_flux"].to_numpy()
 
-    half_exclusion_width = (
-        exclusion_factor * pulse_width["width_phase"] / 2
-    )
+    half_exclusion_width = exclusion_factor * pulse_width["width_phase"] / 2
 
     pulse_start = peak["phase"] - half_exclusion_width
     pulse_end = peak["phase"] + half_exclusion_width

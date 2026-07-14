@@ -1,7 +1,3 @@
-import pandas as pd
-import numpy as np
-
-
 def fold_signal(data, period):
     """
     Fold the pulsar signal using the estimated period.
