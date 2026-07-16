@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.jpg" width="900" alt="Pulsar illustration">
+  <img src="assets/banner.jpeg" width="900" alt="Pulsar illustration">
 </p>
 
 <h1 align="center">Pulsar Signal Analysis</h1>
