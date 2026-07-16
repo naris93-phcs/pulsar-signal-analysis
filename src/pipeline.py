@@ -29,10 +29,20 @@ from src.real_data import load_epn_profile
 from src.simulate import simulate_pulsar_signal
 
 
-def run_simulation_analysis():
+def run_simulation_analysis(
+    simulation_config=None,
+    n_simulations=None,
+    ):
     """
     Run the complete synthetic pulsar analysis pipeline.
     """
+    if simulation_config is None:
+        simulation_config = SIMULATION_CONFIG.copy()
+
+    if n_simulations is None:
+        n_simulations = MONTE_CARLO_CONFIG[
+            "n_simulations"
+        ]
     simulation_results_dir = Path("results/simulation")
     simulation_results_dir.mkdir(
         parents=True,
@@ -40,7 +50,7 @@ def run_simulation_analysis():
     )
 
     data = simulate_pulsar_signal(
-        **SIMULATION_CONFIG,
+    **simulation_config,
     )
 
     print_summary_statistics(data)
@@ -154,11 +164,9 @@ def run_simulation_analysis():
     )
 
     monte_carlo_results = run_monte_carlo(
-        simulation_config=SIMULATION_CONFIG,
-        analysis_config=ANALYSIS_CONFIG,
-        n_simulations=MONTE_CARLO_CONFIG[
-            "n_simulations"
-        ],
+    simulation_config=simulation_config,
+    analysis_config=ANALYSIS_CONFIG,
+    n_simulations=n_simulations,
     )
 
     monte_carlo_results.to_csv(
