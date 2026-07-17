@@ -20,7 +20,7 @@
 
 ## Overview
 
-**Pulsar Signal Analysis** is a modular scientific Python application for simulating, processing, and measuring radio-pulsar signals.
+**Pulsar Signal Analysis** is a modular scientific Python application for simulating, processing and measuring radio-pulsar signals.
 
 The project combines:
 
